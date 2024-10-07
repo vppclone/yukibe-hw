@@ -1,0 +1,185 @@
+<html>
+  <head>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="header">
+      <div>
+        <img
+          src="assets/logo.svg"
+          width="77"
+          height="72"
+          style="margin-left: 74px"
+        />
+        <img src="assets/logo2.png" width="110" height="27" />
+        <img
+          src="assets/back-arrow.svg"
+          width="24"
+          height="30"
+          style="margin-left: 27px"
+        />
+        <img
+          src="assets/home.svg"
+          width="36"
+          height="36"
+          style="margin-left: 55px"
+        />
+        <span class="title" style="margin-left: 25px">HOME</span>
+        <img
+          src="assets/forward.svg"
+          width="24"
+          height="35"
+          style="margin-left: 25px"
+        />
+        <span class="title accent-text" style="margin-left: 40px">
+          Sales statistics
+        </span>
+      </div>
+      <div>
+        <div class="logout-button">
+          <span class="title black-text">Logout</span>
+          <img src="assets/logout.svg" width="30" height="30" />
+        </div>
+      </div>
+    </div>
+    <div class="body">
+      <div class="sidebar">
+        <div class="sidebar-top">
+          <img src="assets/sidebar-logo.svg" width="76" height="71" />
+          <span>Administrator.</span>
+        </div>
+        <div class="sidebar-bottom">
+          <div x-data="{ isOpen: true}" style="width: 100%">
+            <div @click="isOpen= !isOpen" class="sidebar-button">
+              <img
+                src="assets/dashboard.svg"
+                width="36"
+                height="36"
+                style="margin-right: 13px"
+              />
+              <span style="margin-right: auto"> Dashboard </span>
+              <img
+                src="assets/arrow-down.svg"
+                width="24"
+                height="24"
+                style="margin-right: 13px; transition: ease 0.2s"
+                :class="isOpen && 'is-arrow-down'"
+              />
+            </div>
+
+            <div
+              class="collapsible"
+              :class="isOpen && 'is-open'"
+              :style="isOpen && {height: '100%'}"
+            >
+              <div class="sidebar-button">
+                <img
+                  src="assets/cart.svg"
+                  width="36"
+                  height="36"
+                  style="margin-right: 13px"
+                />
+                Orders Management
+              </div>
+              <div class="sidebar-button is-active">
+                <img
+                  src="assets/sales.svg"
+                  width="36"
+                  height="36"
+                  style="margin-right: 13px"
+                />
+                Sales Statistics
+              </div>
+              <div class="sidebar-button">
+                <img
+                  src="assets/user.svg"
+                  width="36"
+                  height="36"
+                  style="margin-right: 13px"
+                />
+                User Management
+              </div>
+              <div class="sidebar-button">
+                <img
+                  src="assets/coupon.svg"
+                  width="36"
+                  height="36"
+                  style="margin-right: 13px"
+                />
+                Coupon Management
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div>
+          <span class="title">Sales statistics</span>
+          <div class="today-sales">
+            <span class="subtitle" style="margin-bottom: 6px">
+              Today's Sales
+            </span>
+            <span class="small">Sales Summary</span>
+            <div class="item-grid">
+              <div>
+                <div class="item">
+                  <div class="icon">
+                    <img src="assets/sales_report.svg" width="48" height="48" />
+                  </div>
+                  <span class="big-text"> 15.090.000 vnd </span>
+                  <span class="small-text">Total sales</span>
+                  <span class="percent-text">+ 5% from yesterday</span>
+                </div>
+              </div>
+              <div>
+                <div class="item" style="background-color: #fff4de">
+                  <div class="icon" style="background-color: #ff9479">
+                    <img src="assets/order_report.svg" width="35" height="35" />
+                  </div>
+                  <span class="big-text">11</span>
+                  <span class="small-text">Total orders</span>
+                  <span class="percent-text">+ 2% from yesterday</span>
+                </div>
+              </div>
+              <div>
+                <div class="item" style="background-color: #f4e8ff">
+                  <div class="icon" style="background-color: #bf83fe">
+                    <img
+                      src="assets/product_report.svg"
+                      width="30"
+                      height="27"
+                    />
+                  </div>
+                  <span class="big-text">17</span>
+                  <span class="small-text">Product sold</span>
+                  <span class="percent-text">+ 8% from yesterday</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="table-grid">
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
