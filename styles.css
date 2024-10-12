@@ -19,6 +19,7 @@ body {
 
 :root {
 	--accent-blue-color: #1d81f3;
+	--accent-border: rgba(0, 0, 0, 0.3);
 	--accent-color: #fec60f;
 	--background-color: #cdebf3;
 	--badge-complete: #f48080;
@@ -26,13 +27,14 @@ body {
 	--badge-pending: #80d5f4;
 	--black-color: #000000;
 	--bold: 700;
+	--button-blue-color: #47d1f8;
 	--extra-bold: 800;
 	--gray-color: #111111;
 	--header-blue-color: #b5eae7;
-	--link-color: #3491f4;
 	--light-blue-color: rgba(89, 156, 227, 0.35);
+	--link-color: #3491f4;
 	--primary-color: #1a202c;
-	--regular: 500;
+	--regular: 400;
 	--semi-bold: 600;
 	--white-color: #ffffff;
 }
@@ -431,11 +433,6 @@ body {
 	color: var(--link-color);
 }
 
-.content .order-table.order-table-content {
-	overflow: scroll;
-	max-height: 722px;
-}
-
 .content .order-table.order-table-header {
 	background-color: var(--header-blue-color);
 	border: solid 1px var(--black-color);
@@ -474,4 +471,135 @@ body {
 	display: flex;
 	border: 0;
 	flex: 1;
+}
+
+.content .order-table-action {
+	display: grid;
+	grid-template-columns: 1fr 14fr 29fr 18fr 18fr 19fr 1fr;
+	background-color: var(--white-color);
+	border-radius: 8px;
+}
+
+.content .order-table-action > div:nth-of-type(6n + 1) {
+	grid-column: unset;
+}
+
+.content .order-table-action > div:nth-of-type(5n + 1) {
+	grid-column: 2;
+}
+
+.content .order-table-action > div {
+	display: flex;
+	align-items: center;
+	padding: 15px;
+	font-family: Poppins;
+	font-weight: var(--regular);
+	font-size: 20px;
+}
+
+.content .order-table-action > .line {
+	grid-column: 1/8;
+	height: 2px;
+	border-bottom: 1px solid black;
+}
+
+.content .order-details {
+	display: flex;
+	min-height: 500px;
+	background-color: var(--white-color);
+	margin-top: -10px;
+	padding: 0 26px;
+	flex-direction: column;
+	border-radius: 8px;
+}
+
+.content .order-details .title {
+	font-weight: var(--semi-bold);
+	font-size: 36px;
+	margin-top: 30px;
+	margin-bottom: 52px;
+}
+
+.content .order-details .order-grid {
+	display: grid;
+	grid-template-columns: 1fr 10fr 33fr 10fr 15fr 15fr 15fr 1fr;
+	background-color: var(--white-color);
+	border-radius: 8px;
+	border: solid 1px var(--accent-border);
+}
+
+.content .order-details .order-grid > div:nth-of-type(6n + 1) {
+	grid-column: 2;
+}
+
+.content .order-details .order-grid > div {
+	display: flex;
+	align-items: center;
+	padding: 22px;
+	font-family: Poppins;
+	font-weight: var(--regular);
+	font-size: 18px;
+}
+
+.content .order-details .order-grid > .line {
+	grid-column: 1/9;
+	height: 2px;
+	border-bottom: 1px solid var(--accent-border);
+}
+
+.content .order-details .order-summary {
+	display: flex;
+	background-color: var(--white-color);
+	padding: 35px 100px;
+	padding-right: 10px;
+	font-family: Poppins;
+	font-size: 18px;
+	flex-direction: column;
+}
+
+.content .order-details .order-summary > .order-summary-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	width: 100%;
+	row-gap: 15px;
+}
+
+.content .order-details .order-summary > .order-summary-grid > :nth-child(odd) {
+	font-weight: var(--semi-bold);
+}
+
+.content
+	.order-details
+	.order-summary
+	> .order-summary-grid
+	> :nth-child(even) {
+	margin-left: auto;
+}
+
+.content .order-details .order-summary > .button-container {
+	display: flex;
+	margin-left: auto;
+	margin-top: 45px;
+}
+
+.content .order-details .order-summary > .button-container > div {
+	width: 135px;
+	height: 37px;
+	border-radius: 8px;
+	background-color: var(--button-blue-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--white-color);
+	padding: 4px 15px;
+}
+
+.content .order-details .order-summary > .button-container > div.accent {
+	background-color: var(--white-color);
+	color: var(--button-blue-color);
+	border: 2px solid var(--button-blue-color);
+}
+
+.content .order-details .order-summary > .button-container > :not(:last-child) {
+	margin-right: 26px;
 }
