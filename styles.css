@@ -18,24 +18,29 @@ body {
 }
 
 :root {
-	--primary-color: #1a202c;
-	--white-color: #ffffff;
-	--black-color: #000000;
-	--background-color: #cdebf3;
-	--accent-color: #fec60f;
 	--accent-blue-color: #1d81f3;
-	--header-blue-color: #b5eae7;
-	--gray-color: #111111;
-	--extra-bold: 800;
+	--accent-color: #fec60f;
+	--background-color: #cdebf3;
+	--badge-complete: #f48080;
+	--badge-deliver: #78d27b;
+	--badge-pending: #80d5f4;
+	--black-color: #000000;
 	--bold: 700;
-	--semi-bold: 600;
+	--extra-bold: 800;
+	--gray-color: #111111;
+	--header-blue-color: #b5eae7;
+	--link-color: #3491f4;
+	--light-blue-color: rgba(89, 156, 227, 0.35);
+	--primary-color: #1a202c;
 	--regular: 500;
+	--semi-bold: 600;
+	--white-color: #ffffff;
 }
 
 .header {
 	background-color: var(--primary-color);
-	width: 100%;
 	height: 94px;
+	width: 100%;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -74,8 +79,8 @@ body {
 
 .body {
 	display: flex;
-	width: 100%;
 	flex: 1;
+	width: 100%;
 }
 
 .sidebar {
@@ -387,6 +392,49 @@ body {
 	font-weight: var(--semi-bold);
 }
 
+.content .order-table > div > .icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 40px;
+	height: 36px;
+	background-color: var(--light-blue-color);
+	border-radius: 8px;
+}
+
+.content .order-table > div > .icon > div {
+	background-image: url(./assets/gear.svg);
+	width: 30px;
+	height: 30px;
+}
+
+.content .order-table > div > .badge {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
+	background-color: var(--badge-complete);
+	color: var(--white-color);
+	font-size: 14px;
+	padding: 3px;
+	opacity: 0.84;
+	width: 83px;
+}
+
+.content .order-table > div > .badge.on-deliver {
+	background-color: var(--badge-deliver);
+}
+
+.content .order-table > div > .badge.pending {
+	background-color: var(--badge-pending);
+	color: var(--link-color);
+}
+
+.content .order-table.order-table-content {
+	overflow: scroll;
+	max-height: 722px;
+}
+
 .content .order-table.order-table-header {
 	background-color: var(--header-blue-color);
 	border: solid 1px var(--black-color);
@@ -397,4 +445,32 @@ body {
 	font-family: Poppins;
 	font-weight: var(--regular);
 	font-size: 24px;
+}
+
+.content .main-header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.content .search-bar {
+	align-items: center;
+	display: flex;
+	width: 337px;
+	height: 48px;
+	border-radius: 24px;
+	background-color: var(--white-color);
+	padding: 5px 20px;
+}
+
+.content .search-bar > :first-child {
+	border-right: solid 1px var(--black-color);
+	padding-right: 10px;
+	margin-right: 15px;
+}
+
+.content .search-bar > input {
+	display: flex;
+	border: 0;
+	flex: 1;
 }
