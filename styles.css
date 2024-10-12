@@ -400,6 +400,7 @@ body {
 	height: 36px;
 	background-color: var(--light-blue-color);
 	border-radius: 8px;
+	cursor: pointer;
 }
 
 .content .order-table > div > .icon > div {
