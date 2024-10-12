@@ -113,12 +113,17 @@ body {
 	color: var(--white-color);
 	align-items: center;
 	cursor: pointer;
+	text-decoration: none;
 }
 
 .sidebar > .sidebar-bottom .sidebar-button.is-active {
 	color: var(--black-color);
 	background-color: var(--accent-color);
 	border-radius: 10px;
+}
+
+.sidebar > .sidebar-bottom .sidebar-button.is-active > img {
+	filter: invert(100%);
 }
 
 .collapsible {
